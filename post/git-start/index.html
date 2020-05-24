@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Git Start | Notes</title>
-<link rel="shortcut icon" href="https://swti.github.io/favicon.ico?v=1590333731150">
+<link rel="shortcut icon" href="https://swti.github.io/favicon.ico?v=1590334148713">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://swti.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="Git Start | Notes - Atom Feed" href="https://swti.github.io/atom.xml">
@@ -22,7 +22,7 @@ Version Control is a system that records changes to a file or a set of files ove
       <div class="main-content">
         <div class="site-header">
   <a href="https://swti.github.io">
-  <img class="avatar" src="https://swti.github.io/images/avatar.png?v=1590333731150" alt="">
+  <img class="avatar" src="https://swti.github.io/images/avatar.png?v=1590334148713" alt="">
   </a>
   <h1 class="site-title">
     Notes
@@ -107,25 +107,29 @@ Version Control is a system that records changes to a file or a set of files ove
 <p>why?<br>
 To deal with the issue that people need to collaborate with developers on other systems.</p>
 <blockquote>
-<p>such as CVS, Subversion, and Perforce.<br>
-They have a single server that contains all the versioned files, and a number of clients check out files from that central place.<br>
+<p>such as CVS, Subversion, and Perforce.</p>
+</blockquote>
+<p>They have a single server that contains all the versioned files, and a number of clients check out files from that central place.<br>
 For many years, this has been the standard for version control.<br>
 <img src="https://swti.github.io/post-images/1590333498035.svg" alt="" loading="lazy"><br>
-If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they’re working on. If the hard disk the central database is on becomes corrupted, and proper backups haven’t been kept, you lose absolutely everything — the entire history of the project except whatever single snapshots people happen to have on their local machines. Local VCS systems suffer from this same problem .<br>
-<strong>whenever you have the entire history of the project in a single place, you risk losing everything.</strong></p>
+If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they’re working on. If the hard disk the central database is on becomes corrupted, and proper backups haven’t been kept, you lose absolutely everything — the entire history of the project except whatever single snapshots people happen to have on their local machines. Local VCS systems suffer from this same problem .</p>
+<blockquote>
+<p><strong>whenever you have the entire history of the project in a single place, you risk losing everything.</strong></p>
 </blockquote>
 <h3 id="distributed-vcss-dvcss">Distributed VCSs (DVCSs)</h3>
 <blockquote>
-<p>such as git, Mercurial, Bazaar or Darcs.<br>
-In a DVCSs, clients don’t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its full history.<br>
+<p>such as git, Mercurial, Bazaar or Darcs.</p>
+</blockquote>
+<p>In a DVCSs, clients don’t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its full history.<br>
 <img src="https://swti.github.io/post-images/1590333515584.svg" alt="" loading="lazy"><br>
-Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project.<br>
-This allows you to set up several types of workflows that aren’t possible in centralized systems, such as hierarchical models.</p>
+Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project.</p>
+<blockquote>
+<p>This allows you to set up several types of workflows that aren’t possible in centralized systems, such as hierarchical models.</p>
 </blockquote>
 <h2 id="a-short-history-of-git">A Short History of Git</h2>
-<p>The Linux kernel is an open source software project of fairly large scope. For most of the lifetime of the Linux maintenance (1991-2002), changes to the software were passed around as patches and archived files. In 2002, the Linux kernel project using a proprietary DVCS called BitKeeper.<br>
-In 2005, the relationship between the community that developed the Linux kernel and the commercial company that developed BitKeeper broke down, and the tool’s free-of-charge status was revoked. This prompted the Linux development community (and in particular Linus Torvalds, the creator of Linux) to develop their own tool based on some of the lessons they learned while using BitKeeper.<br>
-Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development.</p>
+<p>The Linux kernel is an open source software project of fairly large scope. For most of the lifetime of the Linux maintenance (1991-2002), changes to the software were passed around as patches and archived files. In 2002, the Linux kernel project using a proprietary DVCS called BitKeeper.</p>
+<p>In 2005, the relationship between the community that developed the Linux kernel and the commercial company that developed BitKeeper broke down, and the tool’s free-of-charge status was revoked. This prompted the Linux development community (and in particular Linus Torvalds, the creator of Linux) to develop their own tool based on some of the lessons they learned while using BitKeeper.</p>
+<p>Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It’s amazingly fast, it’s very efficient with large projects, and it has an incredible branching system for non-linear development.</p>
 <h2 id="what-is-git">What is Git?</h2>
 <h3 id="snapshots-not-differences">Snapshots, Not differences</h3>
 <p>The major difference between Git and any other VCS (Subverion and friends included) is the way Git thinks about its data.</p>
