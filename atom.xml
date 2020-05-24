@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swti.github.io</id>
     <title>Notes</title>
-    <updated>2020-05-24T15:37:16.475Z</updated>
+    <updated>2020-05-24T15:41:50.969Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swti.github.io"/>
     <link rel="self" href="https://swti.github.io/atom.xml"/>
@@ -25,15 +25,14 @@
 <p>One of the most popular Local VCS tools was a system called <a href="https://www.gnu.org/software/rcs/">RCS</a>, which is still distributed with many computers today.</p>
 </blockquote>
 <h3 id="centralized-vcss-cvcss">Centralized VCSs (CVCSs)</h3>
-<p>why?<br>
+<p><strong>why?</strong><br>
 To deal with the issue that people need to collaborate with developers on other systems.</p>
 <blockquote>
 <p>such as CVS, Subversion, and Perforce.</p>
 </blockquote>
-<p>They have a single server that contains all the versioned files, and a number of clients check out files from that central place.<br>
-For many years, this has been the standard for version control.<br>
+<p>They have a single server that contains all the versioned files, and a number of clients check out files from that central place. For many years, this has been the standard for version control.<br>
 <img src="https://swti.github.io/post-images/1590333498035.svg" alt="" loading="lazy"><br>
-If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they're working on. If the hard disk the central database is on becomes corrupted, and proper backups haven't been kept, you lose absolutely everything — the entire history of the project except whatever single snapshots people happen to have on their local machines. Local VCS systems suffer from this same problem .</p>
+If that server goes down for an hour, then during that hour nobody can collaborate at all or save versioned changes to anything they're working on. If the hard disk the central database is on becomes corrupted, and proper backups haven't been kept, you lose absolutely everything — the entire history of the project except whatever single snapshots people happen to have on their local machines. Local VCS systems suffer from this same problem.</p>
 <blockquote>
 <p><strong>whenever you have the entire history of the project in a single place, you risk losing everything.</strong></p>
 </blockquote>
