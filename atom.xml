@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://swti.github.io</id>
     <title>Notes</title>
-    <updated>2020-05-24T15:41:50.969Z</updated>
+    <updated>2020-06-02T03:31:49.505Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://swti.github.io"/>
     <link rel="self" href="https://swti.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://swti.github.io/images/avatar.png</logo>
     <icon>https://swti.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Notes</rights>
+    <entry>
+        <title type="html"><![CDATA[Git Start]]></title>
+        <id>https://swti.github.io/post/git-start/</id>
+        <link href="https://swti.github.io/post/git-start/">
+        </link>
+        <updated>2020-06-02T03:31:37.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="a-short-history-of-git">A Short History of Git</h2>
+<p>The Linux kernel is an open source software project of fairly large scope. For most of the lifetime of the Linux maintenance (1991-2002), changes to the software were passed around as patches and archived files. In 2002, the Linux kernel project using a proprietary DVCS called <strong>BitKeeper</strong>.</p>
+<p>Itn 2005, the relationship between the community that developed the Linux kernel and the commercial company that developed BitKeeper broke down, and the tool's free-of-charge satus was revoked. This prompted the Linux development community (and in particular Linus Torvalds, the creator of Linux) to develop their own tool based on some of the lessons they learned while using BitKeeper.</p>
+<p>Since its birth in 2005, Git has evolved and matured to be easy to use and yet retain these initial qualities. It's amazingly fast, it's very efficient with large projects, and it has an incredible branching system for non-linear development.</p>
+<h2 id="what-is-git">What is Git?</h2>
+<h3 id="snapshots-not-differences">Snapshots, Not differences</h3>
+<p>The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These other systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they store as a set of files and the changes made to each file over time (this is commonly described as delta-based version control). Git doesn't think of or store its data this way. Instead, Git thinks of its data more like a series of snapshots of a miniature filesystem. <strong>With Git, every time you commit, or save the state of your project, Git basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn't store the file again, just a link to the previous identical file it has already stored</strong>. Git thinks about its data more like a stream of snapshots.</p>
+<h3 id="nearly-every-operation-is-local">Nearly Every Operation Is Local</h3>
+<p>Most operations in Git need only local files and resources to operate — generally no information is needed from another computer on your network.</p>
+<h3 id="git-has-integrity">Git Has Integrity</h3>
+<p>Everything in Git is checksummed before it is stored and is then referred to by that checksum. This means it's impossible to change the contents of any file or directory without Git knowing about it. The mechanism that Git uses for this checksumming is called a <strong>SHA-1 hash</strong>. This is a 40-character string composed of hexadecimal characters (0–9 and a–f) and calculated based on the contents of a file or directory structure in Git. A SHA-1 hash looks something like this:<br>
+<code>24b9da6552252987aa493b52f8696cd6d3b00373</code><br>
+In fact, Git stores everything in its database not by file name but by the hash value of its contents.</p>
+<h3 id="git-generally-only-adds-data">Git Generally Only Adds Data</h3>
+<p>When you do actions in Git, nearly all of them only add data to the Git database. It is hard to get the system to do anything that is not undoable or to make it erase data in any way. This makes using Git a joy because we know we can experiment without the danger of severely screwing things up.</p>
+<h3 id="the-three-states">The Three States</h3>
+<p>Git has three main states that your files can reside in: <strong>modified</strong>, <strong>staged</strong>, and <strong>committed</strong>:</p>
+<ul>
+<li>Modified means that you have changed the file but have not committed it to your database yet.</li>
+<li>Staged means that you have marked a modified file in its current version to go into your next commit snapshot.</li>
+<li>Committed means that the data is safely stored in your local database.<br>
+This leads us to the three main sections of a Git project: <strong>the working tree</strong>, <strong>the staging area</strong>, and <strong>the Git directory</strong>.</li>
+</ul>
+<p>The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</p>
+<p>The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. Its technical name in Git parlance is the &quot;index&quot;, but the phrase &quot;staging area&quot; works just as well.</p>
+<p>The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</p>
+<h2 id="the-command-line">The Command Line</h2>
+<p>There are a lot of different ways to use Git. There are the original command-line tools, and there are many graphical user interfaces of varying capabilities. For one, the command line is the only place you can run all Git commands — most of the GUIs implement only a partial subset of Git functionality for simplicity.</p>
+<h2 id="first-time-git-setup">First-Time Git Setup</h2>
+<p>Git comes with a tool called <strong>git config</strong> that lets you get and set configuration variables that control all aspects of how Git looks and operates. These variables can be stored in three different places:</p>
+<ol>
+<li><code>/etc/gitconfig</code> file: Contains values applied to every user on the system and all their repositories. If you pass the option <code>--system</code> to git config, it reads and writes from this file specifically.</li>
+<li><code>~/.gitconfig</code> or <code>~/.config/git/config</code> file: Values specific personally to you, the user. You can make Git read and write to this file specifically by passing the <code>--global</code> option, and this affects all of the repositories you work with on your system.</li>
+<li><code>config</code> file in the Git directory (that is,<code>.git/config</code>) of whatever repository you're currently using: Specific to that single repository. You can force Git to read from and write to this file with the <code>--local</code> option, but that is in fact the default.</li>
+</ol>
+<p>Each level overrides values in the previous level, so values in<code>.git/config</code> trump those in<code>/etc/gitconfig</code>.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Version Control]]></title>
         <id>https://swti.github.io/post/version-control/</id>
